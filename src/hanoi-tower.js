@@ -1,6 +1,7 @@
 module.exports = function calculateHanoi(disksNumber, turnsSpeed) {
     let minCount = countHanoiMoves(disksNumber);
-    let minSeconds = (minCount / turnsSpeed) * 3600;
+    let speed = turnsSpeed / 3600;
+    let minSeconds = minCount / speed;
     return {turns: minCount, seconds: minSeconds};
 
     function countHanoiMoves(n) {
